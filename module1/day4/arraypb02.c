@@ -1,41 +1,30 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
-    int arr1[100];
-    int i, mx, mn, n;
-	
-	
-       printf("\n\nFind maximum and minimum element in an array :\n");
-       printf("--------------------------------------------------\n");	
+    int arr[] = {5, 2, 9, 1, 7};  // Predefined array
+    int len = sizeof(arr) / sizeof(arr[0]);
+    int i, min, max;
 
-       printf("Input the number of elements to be stored in the array :");
-       scanf("%d",&n);
-   
-       printf("Input %d elements in the array :\n",n);
-       for(i=0;i<n;i++)
-            {
-	      printf("element - %d : ",i);
-	      scanf("%d",&arr1[i]);
-	    }
+    min = arr[0];
+    max = arr[0];
 
-
-    mx = arr1[0];
-    mn = arr1[0];
-
-    for(i=1; i<n; i++)
+    for (i = 1; i < len; i++)
     {
-        if(arr1[i]>mx)
+        if (arr[i] < min)
         {
-            mx = arr1[i];
+            min = arr[i];
         }
-
-
-        if(arr1[i]<mn)
+        if (arr[i] > max)
         {
-            mn = arr1[i];
+            max = arr[i];
         }
     }
-    printf("Maximum element is : %d\n", mx);
-    printf("Minimum element is : %d\n\n", mn);
+
+    printf("Minimum: %d\n", min);
+    printf("Maximum: %d\n", max);
+
+    return 0;
 }
+
+// Solution 2 - Array
